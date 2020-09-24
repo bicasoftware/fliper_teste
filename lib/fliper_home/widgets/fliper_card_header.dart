@@ -14,34 +14,34 @@ class FliperCardHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Text(
-          headerText,
-          style: TextStyle(
-            fontSize: 25,
-            color: context.accentColor,
-            fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(
+            headerText,
+            style: TextStyle(
+              fontSize: 25,
+              color: context.accentColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const Spacer(),
-        //O Ideial seria usar um IconButton, porém, ele tem um padding padrão, o que quebra o design
-        //Talvez seja possível fazer um classe filha que extenda de IconButton e que sobrescreva esse padding,
-        //porém, por questão de prazo, preferi compor um widget mais simples.
-        InkWell(
-          child: const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 0),
-            child: Icon(
+          const Spacer(),
+          //O Ideial seria usar um IconButton, porém, ele tem um padding padrão, o que quebra o design
+          //Talvez seja possível fazer um classe filha que extenda de IconButton e que sobrescreva esse padding,
+          //porém, por questão de prazo, preferi compor um widget mais simples.
+          InkWell(
+            child: const Icon(
               Icons.more_vert,
               color: FliperColors.dividerColor,
             ),
+            onTap: onTap,
           ),
-          onTap: onTap,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

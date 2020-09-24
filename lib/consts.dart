@@ -1,7 +1,5 @@
 import 'package:flutter/painting.dart';
 
-///Arquivo com strings utilizadas na aplicação.
-
 class Consts {
   static const String url = "https://harura-fliper-test.herokuapp.com/v1/graphql";
   static const String secret = "fliperdevtest2020";
